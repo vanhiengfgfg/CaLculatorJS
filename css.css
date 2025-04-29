@@ -14,7 +14,7 @@ body{
     border-radius: 15px;
     max-width: 500px;
     overflow: hidden;
-
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 #display{
     width: 100%;
@@ -24,7 +24,7 @@ body{
     border: none;
     background-color: #00BFFF;
     color: rgb(255, 255, 255);
-    
+    box-sizing: border-box;
 }
 #keys{
     display: grid;
@@ -59,4 +59,45 @@ button:active{
 }
 .operater-btn:active{
     background-color: hsl(193, 100%, 75%);
+}
+/* CSS cho thiết bị di động */
+@media (max-width: 600px) {
+    #calculator {
+        width: 95%;
+        max-width: none;
+        margin: 0 auto;
+    }
+    
+    #display {
+        font-size: 3rem;
+        padding: 15px;
+    }
+    
+    #keys {
+        padding: 15px;
+        gap: 8px;
+    }
+    
+    button {
+        height: 70px;
+        font-size: 2rem;
+    }
+}
+
+/* CSS cho điện thoại màn hình nhỏ */
+@media (max-width: 400px) {
+    #display {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+    
+    #keys {
+        padding: 10px;
+        gap: 5px;
+    }
+    
+    button {
+        height: 60px;
+        font-size: 1.8rem;
+    }
 }
