@@ -11,10 +11,13 @@ function clearDisplay(){
 }
 function calculate(){
     try{
-        display.value=eval(display.value);
-        if(isNaN(result) || result === undefined){
-            display.value=='';
-
+        const result = eval(display.value);
+        
+        // Kiểm tra kết quả có hợp lệ không
+        if (isNaN(result) || result === undefined || result === Infinity) {
+            display.value = 'Error';
+        } else {
+            display.value = result;
         }
     }
     catch(error){
