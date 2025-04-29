@@ -10,18 +10,14 @@ function clearDisplay(){
     
 }
 function calculate(){
-    try{
-        const result = eval(display.value);
-        
-        // Kiểm tra kết quả có hợp lệ không
+    try {
+        const result = new Function('return ' + display.value)();
         if (isNaN(result) || result === undefined || result === Infinity) {
             display.value = 'Error';
         } else {
             display.value = result;
         }
-    }
-    catch(error){
-        display.value='Error';
-        
+    } catch (error) {
+        display.value = 'Error';
     }
 }
